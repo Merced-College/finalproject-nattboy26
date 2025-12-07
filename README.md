@@ -5,14 +5,14 @@ Upload your final project to this github repo.
 
 Make a README file for your project and put the infor about your project in it - your name, date and what your program does.
 
-# Name:
+## Name:
 Nathanael Obrey
-# Date:
+## Date:
 12/6/2025
 
-## Final Project Report
+# Final Project Report
 
-# What does my app do, and how is it useful.
+## What does my app do, and how is it useful.
 This program is a simple business app designed to be used by a tech company or other relevant store. It has a variety of useful features that allows a company to handle transactions and purchase history, all while staying organized. To begin, the customer data is stored into two separate csv files. The first file (customers.csv) is stored in the following format: customerID,lastName,firstName,phone.  The second file (purchases.csv) is stored in the following format: customerID,productName,price. 
 
 My program uses this data to allow the user to do the following actions:
