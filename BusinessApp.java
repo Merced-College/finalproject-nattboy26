@@ -139,30 +139,24 @@ public class BusinessApp {
         }
     } // end listCustomers
 
-    // View purchase history for a customer, with running total via recursion
+    // View purchase history for a customer, with running total via iteration
     private static void viewPurchases(Scanner sc, Map<Integer, Customer> customers) {
         System.out.print("Enter Customer ID: ");
         int id = sc.nextInt();
         Customer c = customers.get(id);
         if (c != null) {
             System.out.println("Purchase History for " + c.getFirstName() + " " + c.getLastName() + ":");
+            // Compute running total using iterative approach
+            double total = 0.0;
             for (Purchase p : c.getPurchases()) {
                 System.out.println(" - " + p.getProductName() + " ($" + p.getPrice() + ")");
+                total += p.getPrice();
             }
-            // Compute and print running total using recursion
-            double total = runningTotal(c.getPurchases(), 0);
             System.out.printf("Total: $%.2f\n", total);
         } else {
             System.out.println("Customer not found.");
         }
     } // end viewPurchases
-
-    // Recursive helper that returns the sum of prices from index `idx` to end
-    private static double runningTotal(List<Purchase> list, int idx) {
-        if (list == null || idx >= list.size()) return 0.0;
-        Purchase p = list.get(idx);
-        return p.getPrice() + runningTotal(list, idx + 1);
-    } // end runningTotal
 
     // Add a transaction for a customer
     private static void addTransaction(Scanner sc, Map<Integer, Customer> customers) {
